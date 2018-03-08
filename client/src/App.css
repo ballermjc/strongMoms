@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Karma:700');
+
+body {
+  background-color: #908ca5;
+}
+
+.App {
+  text-align: center;
+}
+
+.LandingComponent {
+  font-family: 'Karma', serif;
+}
+
+.carouselImg {
+  height: 100%;
+}
+
+.AuthButtonDiv {
+  display: grid;
+  justify-content: flex-end;
+}
+
+.AuthButton {
+  margin: 1.5em 1.5em 0.5em;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 0.2em 1em 0;
+  background-color: #CAE7B9;
+}
+
+.LandingTitle {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: 2px white solid;
+  border-radius: 10px;
+  color: white;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.LandingTitle h1 {
+  margin-top: 0.1em;
+  margin-bottom: -0.25em;
+  font-size: 4.5em;
+}
+
+.CarouselDiv {
+  margin: 2em auto 0;
+  width: 50vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.DashboardGrid {
+  display: grid;
+  grid-template: repeat(9, 1fr) / repeat(3, 1fr);
+  grid-gap: 25px;
+  height: 95vh;
+  margin: 0 25px;
+}
+
+.nav {
+  grid-column: 1 / -1;
+  height: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -25px;
+  background-color: #9DC5BB;
+}
+
+.NavLeft {
+  width: 70vw;
+}
+
+.NavLeftTop {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0.5em 0 -1.25em 3em;
+}
+
+.NavLink {
+  color: black;
+  text-decoration-line: none;
+  font-size: 16px;
+  font-family: 'Karma', serif;
+}
+
+.currentNav {
+  font-size: 18px;
+  color: white;
+  font-family: 'Karma', serif;
+  text-decoration-line: none;
+}
+
+.NavLeftBottom {
+  width: 20vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.NavLeftBottom img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.NavRight {
+  display: flex;
+  justify-content: flex-end;
+  width: 30vw;
+  margin: 1em 0 -1em;
+}
+
+.LogoutButton {
+  margin: 0 1.5em 5.5em;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 0.2em 1em 0;
+  background-color: #D8D4F2;
+}
+
+.one {
+  border: 2px solid white;
+  grid-row: 2 / span 3;
+}
+
+.two {
+  border: 2px solid white;
+  grid-row: 2 / span 3;
+}
+
+.three {
+  border: 2px solid white;
+  grid-row: 2 / span 3;
+}
+
+.four {
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 6;
+  border: 2px solid white;
+}
+
+.five {
+  grid-row: 5 / span 6;
+  border: 2px solid white;
+}
+
+.Post {
+  width: 50vw;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postOne, .postTwo, .postThree {
+  width: 80vw;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 2em auto;
+  background: linear-gradient(#9DC5BB, #FFFC9E)
+}
+
+.postOne p, .postOne h1, .postOne img, .postTwo p, .postTwo h1, .postTwo img, .postThree p, .postThree h1, .postThree img{
+  margin: 1.25em;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}

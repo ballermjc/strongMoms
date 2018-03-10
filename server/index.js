@@ -97,6 +97,67 @@ app.get('/api/auth/setUser', passport.authenticate('auth0'), (req, res, done, ) 
     res.redirect('http://localhost:3000/#/dashboard');
 });
 
+
+
+//Post Routes
+app.get('/api/posts', (req, res) => {
+    const dbInstance = app.get('db');
+    dbInstance.read_posts()
+        .then(posts => {
+            res.status(200).send(posts);
+        });
+});
+
+app.get('/api/posts/:category', (req, res) => {
+    const dbInstance = app.get('db');
+    console.log(req.params.category);
+    dbInstance.read_postsByCategory( [req.params.category] )
+        .then(posts => {
+            res.status(200).send(posts);
+        });
+});
+
+app.get('/api/post/:id', (req, res) => {
+     const dbInstance = app.get('db');
+     dbInstance.read_post( [req.params.id] )
+        .then(post => {
+            res.status(200).send(post)
+        });
+});
+
+app.post('/api/posts', (req, res) => {
+    const dbInstance = app.get('db');
+    const UserID = req.session.passport.user.id;
+    const { title, body, category, photo } = req.body;
+    dbInstance.create_post( [ title, body, category, photo, UserID ] )
+        .then(post => {
+            res.status(200).send(post);
+            console.log(post);
+        });
+});
+
+app.patch('/api/post/:id', (req, res) => {
+    const dbInstance = req.app.get('db');
+    const postID = req.params.id;
+    const { title, body, category, photo } = req.body;
+    dbInstance.update_post([ postID, title, body, category, photo ])
+        .then(post => {
+            res.status(200).send(post);
+        });
+});
+
+app.delete('/api/post/:id', (req, res) => {
+    const dbInstance = req.app.get('db');
+    const postID = req.params.id;
+    dbInstance.delete_post([ postID ])
+        .then(() => {
+            console.log("Post Deleted");
+        });
+});
+
+
+//Run Server
+
 app.listen(port, console.log(`Oh Snap, the party is on port ${port}`));
 
 
@@ -104,9 +165,18 @@ app.listen(port, console.log(`Oh Snap, the party is on port ${port}`));
 
 // CREATE TABLE Users (
 //     ID SERIAL PRIMARY KEY,
-//     UserID Text,
+//     UserID Text Unique,
 //     FirstName Text,
 //     LastName Text,
 //     isAdmin BOOLEAN,
 //     isSuperUser BOOLEAN
+
+
+// CREATE TABLE Posts (
+//     ID Serial Primary Key,
+//     PostID text,
+//     Title text,
+//     Body text,
+//     Category text,
+//     UserID text references Users(UserID)
 // )

@@ -9,7 +9,7 @@ export default class Landing extends Component {
     render() {
         return (
             <div className="LandingComponent">
-                <div className="AuthButtonDiv"><button className="AuthButton">Login / Register</button></div>
+                <div className="AuthButtonDiv"><a href='http://localhost:3001/api/auth/login'><button className="AuthButton">Login / Register</button></a></div>
                 <div className="LandingTitle">
                     <h1>Strong Moms</h1>
                 </div>

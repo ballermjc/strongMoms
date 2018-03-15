@@ -1,0 +1,1 @@
+SELECT * FROM Posts Order By ID DESC Limit 3;

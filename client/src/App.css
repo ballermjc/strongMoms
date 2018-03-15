@@ -180,7 +180,7 @@ body {
   border: 2px solid white;
   border-radius: 10px;
   margin: 2em auto;
-  background: linear-gradient(#9DC5BB, #FFFC9E)
+  background: linear-gradient(#9DC5BB, #FFFC9E);
 }
 
 .postOne p, .postOne h1, .postOne img, .postTwo p, .postTwo h1, .postTwo img, .postThree p, .postThree h1, .postThree img{
@@ -190,4 +190,41 @@ body {
 img {
   width: 100px;
   height: 100px;
+}
+
+.dashboardPost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background: linear-gradient(#9DC5BB, #FFFC9E);
+  height: 100%;
+
+}
+
+.dashboardPost img {
+  width: 8em;
+  height: 8em;
+  margin: 10px;
+}
+
+.dashboardPost h1 {
+  width: 8em;
+  height: 8em;
+  margin: 10px;
+}
+
+.four .dashboardPost img {
+  width: 20em;
+  height: 20em;
+}
+
+.four .dashboardPost h1 {
+  font-size: 4em;
+}
+
+.postLink {
+  text-decoration: none;
+  color: black;
 }

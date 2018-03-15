@@ -15,7 +15,7 @@ export default (
         <div>
             <Route exact path='/' component={Landing} />
             <Route path='/dashboard' component={Dashboard} />
-            <Route path='/post' component={Post} />
+            <Route path='/post/:id' component={Post} />
             <Route path='/fitness' component={Fitness} />
             <Route path='/momToolsAndTips' component={MomToolsAndTips} />
             <Route path='/parenting' component={Parenting} />

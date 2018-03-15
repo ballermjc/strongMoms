@@ -47,19 +47,23 @@ passport.use(new Auth0Strategy({
     domain: domain,
     clientID: clientID,
     clientSecret: clientSecret,
-    callbackURL: '/api/auth/setUser'
+    callbackURL: '/api/auth/setUser',
+    scope: 'openid profile'
     },
     function(accessToken, refreshToken, extraParams, profile, done) {
+        console.log('Profile: ', profile, 'Ending');
         done(null, profile);
 }));
 
 passport.serializeUser((user, done) => {
+    console.log('User: ', user, 'end');
     done(null,
     {
-        id: user.id,
+        id: user.user_id,
         firstName: user.first || '',
         lastName: user.last || ''
     });
+    console.log('User_ID:', user);
 });
 
 passport.deserializeUser((obj, done) => {
@@ -108,10 +112,35 @@ app.get('/api/posts', (req, res) => {
         });
 });
 
+app.get('/api/posts/mostRecent', (req, res) => {
+    const dbInstance = app.get('db');
+    dbInstance.read_three_posts()
+        .then(posts => {
+            res.status(200).send(posts);
+        });
+});
+
+app.get('/api/posts/dashboard', (req, res) => {
+    const dbInstance = app.get('db');
+    dbInstance.read_dashboard_posts()
+        .then(posts => {
+            res.status(200).send(posts);
+        });
+});
+
 app.get('/api/posts/:category', (req, res) => {
     const dbInstance = app.get('db');
     console.log(req.params.category);
     dbInstance.read_postsByCategory( [req.params.category] )
+        .then(posts => {
+            let recentPosts = posts.slice(0,3);
+            res.status(200).send(recentPosts);
+        });
+});
+
+app.get('/api/posts/recent', (req, res) => {
+    const dbInstance = app.get('db');
+    dbInstance.read_three_posts()
         .then(posts => {
             res.status(200).send(posts);
         });
@@ -121,7 +150,8 @@ app.get('/api/post/:id', (req, res) => {
      const dbInstance = app.get('db');
      dbInstance.read_post( [req.params.id] )
         .then(post => {
-            res.status(200).send(post)
+            res.status(200).send(post);
+            console.log(post);
         });
 });
 

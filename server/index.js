@@ -18,12 +18,6 @@ var corsOptions = {
     origin: 'http://localhost:3000'
 }
 
-
-app.use( express.static( `${__dirname}/../client/build` ) );
-app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -185,6 +179,12 @@ app.delete('/api/post/:id', (req, res) => {
         });
 });
 
+
+//for hosting
+app.use( express.static( `${__dirname}/../client/build` ) );
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 //Run Server
 

@@ -17,7 +17,6 @@ export default class Landing extends Component {
     componentWillMount() {
         axios.get(`/api/posts/mostRecent`)
             .then(res => {
-                console.log(res.data);
                 this.setState({ mostRecentPosts: res.data });
             })
             .catch(err => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import favicon from '../../favicon.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class Parenting extends Component {
     constructor(){
@@ -32,11 +33,13 @@ export default class Parenting extends Component {
     render() {
         const Parenting = this.state.Parenting.map( parenting => {
             return (
+                <Link to={`/post/${parenting.id}`}>
                 <div className="postOne" key={this.state.Parenting.indexOf(parenting)}>
                     <img src={parenting.photo} alt="postpic"/>
                     <h1>{parenting.title}</h1>
                     <p>{parenting.body.slice(0, 400)}...</p>
                 </div>
+                </Link>
             )
         });
 

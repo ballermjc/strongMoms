@@ -92,9 +92,14 @@ app.get('/api/auth/setUser', passport.authenticate('auth0'), (req, res, done, ) 
                     })
             }
         })
-    res.redirect('http://localhost:3000/#/dashboard');
+    res.redirect('/#/dashboard');
 });
 
+app.get('/api/auth/logout', (req, res) => {
+    req.logOut();
+    console.log('User is logged out', req.session.passport);
+    res.redirect('/');
+})
 
 
 //Post Routes

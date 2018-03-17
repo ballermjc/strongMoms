@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import favicon from '../../favicon.png';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
+    logout() {
+        axios.get('/api/auth/logout');
+        alert('You were successfully logged out.');
+    }
+
+
     render() {
         return (
             <div className="nav">
@@ -40,7 +48,9 @@ export default class NavBar extends Component {
                 </div>
 
                 <div className="NavRight">
-                    <div className="LogoutButtonDiv"><button className="LogoutButton">Logout</button></div>
+                    <Link to={`/`}>
+                        <div className="LogoutButtonDiv"><button className="LogoutButton" onClick={() => this.logout()}>Logout</button></div>
+                    </Link>
                 </div>
             </div>
         )

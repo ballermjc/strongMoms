@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import favicon from '../../favicon.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MomToolsAndTips extends Component {
     constructor(){
@@ -32,11 +33,13 @@ export default class MomToolsAndTips extends Component {
     render() {
         const MomToolsAndTips = this.state.MomToolsAndTips.map( momToolAndTip => {
             return (
+                <Link to={`/post/${momToolAndTip.id}`}>
                 <div className="postOne" key={this.state.MomToolsAndTips.indexOf(momToolAndTip)}>
                     <img src={momToolAndTip.photo} alt="postpic"/>
                     <h1>{momToolAndTip.title}</h1>
                     <p>{momToolAndTip.body.slice(0, 400)}...</p>
                 </div>
+                </Link>
             )
         });
 

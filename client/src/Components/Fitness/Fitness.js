@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import favicon from '../../favicon.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class Fitness extends Component {
     constructor(){
@@ -32,11 +33,13 @@ export default class Fitness extends Component {
     render() {
         const Fitness = this.state.Fitness.map( fitness => {
             return (
+                <Link to={`/post/${fitness.id}`}>
                 <div className="postOne" key={this.state.Fitness.indexOf(fitness)}>
                     <img src={fitness.photo} alt="postpic"/>
                     <h1>{fitness.title}</h1>
                     <p>{fitness.body.slice(0, 400)}...</p>
                 </div>
+                </Link>
             )
         });
 

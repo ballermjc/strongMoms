@@ -28,7 +28,7 @@ export default class Landing extends Component {
         const mostRecentPosts = this.state.mostRecentPosts.map( post => {
             return (
                 <div className="postOne" key={this.state.mostRecentPosts.indexOf(post)}>
-                    <a href='http://localhost:3001/api/auth/login'>
+                    <a href='/api/auth/login'>
                     <img src={post.photo} alt="postpic"/>
                     <h1>{post.title}</h1>
                     <p>{post.body.slice(0, 400)}...</p>
@@ -40,7 +40,7 @@ export default class Landing extends Component {
 
         return (
             <div className="LandingComponent">
-                <div className="AuthButtonDiv"><a href='http://localhost:3001/api/auth/login'><button className="AuthButton">Login / Register</button></a></div>
+                <div className="AuthButtonDiv"><a href='/api/auth/login'><button className="AuthButton">Login / Register</button></a></div>
                 <div className="LandingTitle">
                     <h1>Strong Moms</h1>
                 </div>

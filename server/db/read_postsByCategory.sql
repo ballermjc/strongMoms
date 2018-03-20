@@ -1,1 +1,1 @@
-SELECT * FROM Posts Where Category = $1;
+SELECT * FROM Posts Where Category = $1 order by id DESC;

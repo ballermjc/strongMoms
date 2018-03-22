@@ -8,7 +8,7 @@ const express           = require('express'),
       massive           = require('massive'),
       passport          = require('passport'),
       path              = require('path'),
-      port              = 80,
+      port              = process.env.PORT || 80,
       session           = require('express-session');
 
 const { domain, clientID, clientSecret } = config;

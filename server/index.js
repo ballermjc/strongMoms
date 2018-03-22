@@ -67,7 +67,7 @@ passport.deserializeUser((obj, done) => {
 //Authorization Endpoints
 
 app.get('/api/me', (req, res) => {
-    res.status(200).send(req.isAuthenticated);
+    res.status(200).send(req.isAuthenticated());
 });
 
 app.get('/api/auth/login',
@@ -95,7 +95,9 @@ app.get('/api/auth/setUser', passport.authenticate('auth0'), (req, res, done, ) 
 });
 
 app.get('/api/auth/logout', (req, res) => {
-    req.logOut();
+    req.logout();
+    console.log("logged out");
+    res.redirect('/');
 })
 
 

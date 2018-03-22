@@ -2,14 +2,13 @@ const express           = require('express'),
       Auth0Strategy     = require('passport-auth0'),
       app               = express(),
       bodyParser        = require('body-parser'),
-      isLoggedIn        = require('./middlewares/isLoggedIn');
       config            = require(`${__dirname}/config.js`),
       cors              = require('cors'),
       flash             = require('connect-flash');
       massive           = require('massive'),
       passport          = require('passport'),
       path              = require('path'),
-      port              = 3001,
+      port              = 80,
       session           = require('express-session');
 
 const { domain, clientID, clientSecret } = config;
@@ -67,6 +66,10 @@ passport.deserializeUser((obj, done) => {
 
 //Authorization Endpoints
 
+app.get('/api/me', (req, res) => {
+    res.status(200).send(req.isAuthenticated);
+});
+
 app.get('/api/auth/login',
     passport.authenticate('auth0', {
         successRedirect: '/api/auth/setUser',
@@ -113,7 +116,7 @@ app.get('/api/posts/mostRecent', (req, res) => {
         });
 });
 
-app.get('/api/posts/dashboard', isLoggedIn,(req, res) => {
+app.get('/api/posts/dashboard', (req, res) => {
     const dbInstance = app.get('db');
     dbInstance.read_dashboard_posts()
         .then(posts => {
@@ -121,7 +124,7 @@ app.get('/api/posts/dashboard', isLoggedIn,(req, res) => {
         });
 });
 
-app.get('/api/posts/:category', isLoggedIn,(req, res) => {
+app.get('/api/posts/:category', (req, res) => {
     const dbInstance = app.get('db');
     dbInstance.read_postsByCategory( [req.params.category] )
         .then(posts => {
@@ -138,8 +141,7 @@ app.get('/api/posts/recent', (req, res) => {
         });
 });
 
-app.get('/api/post/:id', isLoggedIn,(req, res) => {
-    console.log(req.isAuthenticated());
+app.get('/api/post/:id', (req, res) => {
      const dbInstance = app.get('db');
      dbInstance.read_post( [req.params.id] )
         .then(post => {
@@ -157,7 +159,7 @@ app.post('/api/posts',(req, res) => {
         });
 });
 
-app.patch('/api/post/:id', isLoggedIn,(req, res) => {
+app.patch('/api/post/:id', (req, res) => {
     const dbInstance = req.app.get('db');
     const postID = req.params.id;
     console.log(req.body);
@@ -169,7 +171,7 @@ app.patch('/api/post/:id', isLoggedIn,(req, res) => {
         });
 });
 
-app.delete('/api/post/:id', isLoggedIn,(req, res) => {
+app.delete('/api/post/:id', (req, res) => {
     const dbInstance = req.app.get('db');
     const postID = req.params.id;
     dbInstance.delete_post([ postID ])

@@ -39,6 +39,10 @@ export default class NavBar extends Component {
                         <NavLink className='NavLink' activeClassName='currentNav' to='/salutes'>
                             Salutes To Strong Moms
                         </NavLink>
+
+                        <NavLink className='NavLink' activeClassName='currentNav' to='/newPost'>
+                            New Post
+                        </NavLink>
                     </div>
 
                     <div className="NavLeftBottom">

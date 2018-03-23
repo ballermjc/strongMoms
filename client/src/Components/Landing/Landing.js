@@ -27,11 +27,13 @@ export default class Landing extends Component {
     render() {
         const mostRecentPosts = this.state.mostRecentPosts.map( post => {
             return (
-                <div className="postOne" key={this.state.mostRecentPosts.indexOf(post)}>
+                <div className="card" key={this.state.mostRecentPosts.indexOf(post)}>
                     <a href='/api/auth/login'>
-                    <img src={post.photo} alt="postpic"/>
-                    <h1>{post.title}</h1>
-                    <p>{post.body.slice(0, 400)}...</p>
+                        <img src={post.photo} alt="postpic"/>
+                        <div class="container">
+                            <h1>{post.title}</h1>
+                            {/* <p>{post.body.slice(0, 400)}...</p> */}
+                        </div>
                     </a>
                 </div>
             )

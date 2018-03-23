@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Karma:700');
 
 body {
-  background-color: #908ca5;
+  background-color: #FFFEEF;
 }
 
 a {
@@ -15,10 +15,47 @@ a {
 
 .LandingComponent {
   font-family: 'Karma', serif;
+  background: #FFFEEF;
+}
+
+.LandingTitle {
+  background: #D8D4F2;
 }
 
 .carouselImg {
   height: 100%;
+  border-radius: 5px;
+}
+
+.threePosts {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em;
+}
+
+.card {
+  box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 40vw;
+  height: auto;
+  margin: 1.5em;
+  background: #D8D4F2;
+  padding: 1.5em;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
 }
 
 .AuthButtonDiv {
@@ -29,10 +66,10 @@ a {
 .AuthButton {
   margin: 1.5em 1.5em 0.5em;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1em;
   padding: 0.2em 1em 0;
-  background-color: #CAE7B9;
+  background-color: #9B97B2;
 }
 
 .LandingTitle {
@@ -61,6 +98,7 @@ a {
   justify-content: center;
   align-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 
 .DashboardGrid {

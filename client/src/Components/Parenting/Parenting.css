@@ -1,0 +1,45 @@
+  .ParentingPosts {
+    display: flex;
+    justify-content: space-around;
+    margin: -1em auto 0;
+    width: 90vw;
+  }
+  
+  .CategoryCard {
+    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 25vw;
+    height: auto;
+    margin: 1.5em;
+    background: #D8D4F2;
+    padding: 1.5em;
+  }
+  
+  .CategoryCard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  
+  .CategoryCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+  }
+
+@media only screen and (max-width: 768px) {      
+      .ParentingPosts {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        width: 84vw;
+      }
+      
+      .CategoryCard {
+        width: 84vw;        
+      }
+
+}

@@ -2,205 +2,13 @@
 
 body {
   background-color: #FFFEEF;
+  font-family: 'Karma', serif;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-.App {
-  text-align: center;
-}
-
-.LandingComponent {
-  font-family: 'Karma', serif;
-  background: #FFFEEF;
-}
-
-.LandingTitle {
-  background: #D8D4F2;
-}
-
-.carouselImg {
-  height: 100%;
-  border-radius: 5px;
-}
-
-.threePosts {
-  display: flex;
-  justify-content: space-around;
-  margin: 2em;
-}
-
-.card {
-  box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  width: 40vw;
-  height: auto;
-  margin: 1.5em;
-  background: #D8D4F2;
-  padding: 1.5em;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px 5px 0 0;
-}
-
-.AuthButtonDiv {
-  display: grid;
-  justify-content: flex-end;
-}
-
-.AuthButton {
-  margin: 1.5em 1.5em 0.5em;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  padding: 0.2em 1em 0;
-  background-color: #9B97B2;
-}
-
-.LandingTitle {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  border: 2px white solid;
-  border-radius: 10px;
-  color: white;
-  width: 50vw;
-  margin: 0 auto;
-}
-
-.LandingTitle h1 {
-  margin-top: 0.1em;
-  margin-bottom: -0.25em;
-  font-size: 4.5em;
-}
-
-.CarouselDiv {
-  margin: 2em auto 0;
-  width: 50vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  border-radius: 5px;
-}
-
-.DashboardGrid {
-  display: grid;
-  grid-template: repeat(9, 1fr) / repeat(3, 1fr);
-  grid-gap: 25px;
-  height: 95vh;
-  margin: 0 25px;
-}
-
-.nav {
-  grid-column: 1 / -1;
-  height: 100px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  margin: 0 -25px;
-  background-color: #9DC5BB;
-}
-
-.NavLeft {
-  width: 70vw;
-}
-
-.NavLeftTop {
-  display: flex;
-  justify-content: space-around;
-  align-content: space-around;
-  align-items: flex-start;
-  width: 100%;
-  margin: 0.5em 0 -1.25em 3em;
-}
-
-.NavLink {
-  color: black;
-  text-decoration-line: none;
-  font-size: 16px;
-  font-family: 'Karma', serif;
-}
-
-.currentNav {
-  font-size: 18px;
-  color: white;
-  font-family: 'Karma', serif;
-  text-decoration-line: none;
-}
-
-.NavLeftBottom {
-  width: 20vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 20px;
-}
-
-.NavLeftBottom img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.NavRight {
-  display: flex;
-  justify-content: flex-end;
-  width: 30vw;
-  margin: 1em 0 -1em;
-}
-
-.LogoutButton {
-  margin: 0 1.5em 5.5em;
-  border: none;
-  border-radius: 10px;
-  font-size: 1em;
-  padding: 0.2em 1em 0;
-  background-color: #D8D4F2;
-}
-
-.one {
-  border: 2px solid white;
-  grid-row: 2 / span 3;
-}
-
-.two {
-  border: 2px solid white;
-  grid-row: 2 / span 3;
-}
-
-.three {
-  border: 2px solid white;
-  grid-row: 2 / span 3;
-}
-
-.four {
-  grid-column: 1 / span 2;
-  grid-row: 5 / span 6;
-  border: 2px solid white;
-}
-
-.five {
-  grid-row: 5 / span 6;
-  border: 2px solid white;
 }
 
 .Post {
@@ -214,11 +22,12 @@ a {
   flex-direction: column;
 }
 
-.postOne, .postTwo, .postThree {
+.postOne {
   width: 80vw;
   display: flex;
   padding: 10px;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   border: 2px solid white;
   border-radius: 10px;
@@ -226,47 +35,9 @@ a {
   background: linear-gradient(#9DC5BB, #FFFC9E);
 }
 
-.postOne p, .postOne h1, .postOne img, .postTwo p, .postTwo h1, .postTwo img, .postThree p, .postThree h1, .postThree img{
+.postOne p, .postOne h1, .postOne img {
   margin: 1.25em;
 }
-
-img {
-  width: 100px;
-  height: 100px;
-}
-
-.dashboardPost {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  background: linear-gradient(#9DC5BB, #FFFC9E);
-  height: 100%;
-
-}
-
-.dashboardPost img {
-  width: 8em;
-  height: 8em;
-  margin: 10px;
-}
-
-.dashboardPost h1 {
-  width: 8em;
-  height: 8em;
-  margin: 10px;
-}
-
-.four .dashboardPost img {
-  width: 20em;
-  height: 20em;
-}
-
-.four .dashboardPost h1 {
-  font-size: 4em;
-}
-
 .postLink {
   text-decoration: none;
   color: black;

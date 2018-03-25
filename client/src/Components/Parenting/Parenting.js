@@ -3,6 +3,7 @@ import NavBar from '../NavBar/NavBar';
 import favicon from '../../favicon.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Parenting.css';
 
 export default class Parenting extends Component {
     constructor(){
@@ -34,11 +35,13 @@ export default class Parenting extends Component {
         const Parenting = this.state.Parenting.map( parenting => {
             return (
                 <Link to={`/post/${parenting.id}`}>
-                <div className="postOne" key={this.state.Parenting.indexOf(parenting)}>
-                    <img src={parenting.photo} alt="postpic"/>
-                    <h1>{parenting.title}</h1>
-                    <p>{parenting.body.slice(0, 400)}...</p>
-                </div>
+                    <div className="CategoryCard" key={this.state.Parenting.indexOf(parenting)}>
+                        <img src={parenting.photo} alt="postpic"/>
+                        <div className="container">
+                            <h1>{parenting.title}</h1>
+                            <p>{parenting.body.slice(0, 200)}...</p>
+                        </div>
+                    </div>
                 </Link>
             )
         });
@@ -47,7 +50,11 @@ export default class Parenting extends Component {
         return (
             <div className="Parenting">
                 <NavBar/>
-                { Parenting }
+                <h1>Parenting</h1>
+                <div className="ParentingPosts">
+                    { Parenting }
+                </div>
+                
             </div>
         )
     }

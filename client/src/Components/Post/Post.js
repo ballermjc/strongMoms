@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import renderHTML from 'react-render-html';
 import './Post.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default class Post extends Component {
     constructor() {
@@ -42,7 +44,7 @@ export default class Post extends Component {
                    
                     <img src={this.state.photo} alt="postImage"/>
                     
-                    <p>{renderHTML(this.state.body)}</p>
+                    <p className="ql-editor">{renderHTML(this.state.body)}</p>
                     <Link to={`/posts/edit/${this.props.match.params.id}`}>
                     <button className="editButton">Edit Post</button>
                     </Link>

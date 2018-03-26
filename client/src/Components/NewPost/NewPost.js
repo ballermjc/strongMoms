@@ -9,6 +9,13 @@ import { connect } from 'react-redux';
 import { updateTitle, updateBody, updateCategory, updatePhoto } from '../../reducer';
 
 class NewPost extends Component {
+    componentDidMount() {
+        this.props.updateTitle('');
+        this.props.updatePhoto('');
+        this.props.updateCategory('');
+        this.props.updateBody('');
+    }
+
     addPost() {
         const body = {
             title: this.props.title,
@@ -21,6 +28,10 @@ class NewPost extends Component {
             
             .then(res => {
                 console.log(body);
+                this.props.updateTitle('');
+                this.props.updatePhoto('');
+                this.props.updateCategory('');
+                this.props.updateBody('');
             })
             .catch(err => console.log(err));
     }

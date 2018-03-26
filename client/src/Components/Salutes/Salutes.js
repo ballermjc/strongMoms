@@ -39,7 +39,6 @@ export default class Salutes extends Component {
                         <img src={salute.photo} alt="postpic"/>
                         <div className="container">
                             <h1>{salute.title}</h1>
-                            <p>{salute.body.slice(0, 200)}...</p>
                         </div>
                     </div>
                 </Link>

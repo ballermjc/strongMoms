@@ -39,7 +39,6 @@ export default class MomToolsAndTips extends Component {
                         <img src={momToolAndTip.photo} alt="postpic"/>
                         <div className="container">
                             <h1>{momToolAndTip.title}</h1>
-                            <p>{momToolAndTip.body.slice(0, 200)}...</p>
                         </div>
                     </div>
                 </Link>

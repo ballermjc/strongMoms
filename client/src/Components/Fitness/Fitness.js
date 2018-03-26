@@ -39,7 +39,6 @@ export default class Fitness extends Component {
                     <img src={fitness.photo} alt="postpic"/>
                     <div className="container">
                         <h1>{fitness.title}</h1>
-                        <p>{fitness.body.slice(0, 200)}...</p>
                     </div>
                     
                 </div>

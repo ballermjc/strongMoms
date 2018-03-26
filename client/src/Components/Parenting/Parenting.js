@@ -4,6 +4,8 @@ import favicon from '../../favicon.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Parenting.css';
+import renderHTML from 'react-render-html';
+
 
 export default class Parenting extends Component {
     constructor(){
@@ -39,7 +41,6 @@ export default class Parenting extends Component {
                         <img src={parenting.photo} alt="postpic"/>
                         <div className="container">
                             <h1>{parenting.title}</h1>
-                            <p>{parenting.body.slice(0, 200)}...</p>
                         </div>
                     </div>
                 </Link>

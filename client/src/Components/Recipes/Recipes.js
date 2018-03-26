@@ -39,7 +39,6 @@ export default class Recipes extends Component {
                         <img src={recipe.photo} alt="postpic"/>
                         <div className="container">
                             <h1>{recipe.title}</h1>
-                            <p>{recipe.body.slice(0, 200)}...</p>
                         </div>
                     </div>
                 </Link>

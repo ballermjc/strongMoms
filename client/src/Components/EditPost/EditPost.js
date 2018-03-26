@@ -32,6 +32,10 @@ class EditPost extends Component {
         axios.patch(`/api/post/${this.props.match.params.id}`, body)
             .then(res => {
                 console.log(res.data);
+                this.props.updateTitle('');
+                this.props.updatePhoto('');
+                this.props.updateCategory('');
+                this.props.updateBody('');
             })
             .catch(err => console.log(err));
 

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import renderHTML from 'react-render-html';
+import './Post.css';
 
 export default class Post extends Component {
     constructor() {
@@ -34,19 +36,19 @@ export default class Post extends Component {
         return (
             <div className="PostComponent">
                 <NavBar />
-                <div className="Post">
+                <div className="PostArea">
 
                     <h1>{this.state.title}</h1>
                    
                     <img src={this.state.photo} alt="postImage"/>
                     
-                    <p>{this.state.body}</p>  
+                    <p>{renderHTML(this.state.body)}</p>
                     <Link to={`/posts/edit/${this.props.match.params.id}`}>
-                    <button>Edit Post</button>
+                    <button className="editButton">Edit Post</button>
                     </Link>
 
                     <Link to={`/dashboard`}>
-                    <button onClick={() => this.deletePost()}>Delete Post</button>
+                    <button className="deleteButton" onClick={() => this.deletePost()}>Delete Post</button>
                     </Link>
                 </div>
             </div>

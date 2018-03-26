@@ -11,34 +11,8 @@ a {
   color: black;
 }
 
-.Post {
-  width: 50vw;
-  margin: 0 auto;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.postOne {
-  width: 80vw;
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  border: 2px solid white;
-  border-radius: 10px;
-  margin: 2em auto;
-  background: linear-gradient(#9DC5BB, #FFFC9E);
-}
-
-.postOne p, .postOne h1, .postOne img {
-  margin: 1.25em;
-}
 .postLink {
   text-decoration: none;
   color: black;
 }
+

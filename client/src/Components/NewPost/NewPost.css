@@ -1,0 +1,108 @@
+.NewPost {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 1em 20%;
+    text-align: left;
+}
+
+.NewPost{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.NewPost h1{
+    background: #9B97B2;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+.NewPost input[type="text"],
+.NewPost input[type="date"],
+.NewPost input[type="datetime"],
+.NewPost input[type="email"],
+.NewPost input[type="number"],
+.NewPost input[type="search"],
+.NewPost input[type="time"],
+.NewPost input[type="url"],
+.NewPost textarea,
+.NewPost select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.NewPost input[type="text"]:focus,
+.NewPost input[type="date"]:focus,
+.NewPost input[type="datetime"]:focus,
+.NewPost input[type="email"]:focus,
+.NewPost input[type="number"]:focus,
+.NewPost input[type="search"]:focus,
+.NewPost input[type="time"]:focus,
+.NewPost input[type="url"]:focus,
+.NewPost textarea:focus,
+.NewPost select:focus
+{
+    box-shadow: 0 0 5px #9B97B2;
+    padding: 3%;
+    border: 1px solid #9B97B2;
+}
+
+.NewPost input[type="submit"],
+.NewPost input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #9B97B2;
+    border-bottom: 2px solid #9B97B2;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.NewPost input[type="submit"]:hover,
+.NewPost input[type="button"]:hover{
+    background: #9B97B2;
+}
+
+.editor {
+    background: #FFF;
+    margin-bottom: 10px;
+}
+
+.finishButton {
+    background-color: #9B97B2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25em;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+.finishButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

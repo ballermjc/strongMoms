@@ -3,6 +3,7 @@ import NavBar from '../NavBar/NavBar';
 import favicon from '../../favicon.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Salutes.css';
 
 export default class Salutes extends Component {
     constructor(){
@@ -34,11 +35,13 @@ export default class Salutes extends Component {
         const salutes = this.state.salutes.map( salute => {
             return (
                 <Link to={`/post/${salute.id}`}>
-                <div className="postOne" key={this.state.salutes.indexOf(salute)}>
-                    <img src={salute.photo} alt="postpic"/>
-                    <h1>{salute.title}</h1>
-                    <p>{salute.body.slice(0, 400)}...</p>
-                </div>
+                    <div className="CategoryCard" key={this.state.salutes.indexOf(salute)}>
+                        <img src={salute.photo} alt="postpic"/>
+                        <div className="container">
+                            <h1>{salute.title}</h1>
+                            <p>{salute.body.slice(0, 200)}...</p>
+                        </div>
+                    </div>
                 </Link>
             )
         });
@@ -47,7 +50,10 @@ export default class Salutes extends Component {
         return (
             <div className="Salutes">
                 <NavBar/>
-                { salutes }
+                <h1>Salutes To Strong Moms</h1>
+                <div className="SalutesPosts">
+                    { salutes }
+                </div>
             </div>
         )
     }

@@ -1,0 +1,87 @@
+.EditPost {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 1em 20%;
+    text-align: left;
+}
+
+.EditPost{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+.EditPost h1{
+    background: #9B97B2;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px -16px 16px -16px;
+}
+.EditPost input[type="text"],
+.EditPost input[type="date"],
+.EditPost input[type="datetime"],
+.EditPost input[type="email"],
+.EditPost input[type="number"],
+.EditPost input[type="search"],
+.EditPost input[type="time"],
+.EditPost input[type="url"],
+.EditPost textarea,
+.EditPost select 
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.EditPost input[type="text"]:focus,
+.EditPost input[type="date"]:focus,
+.EditPost input[type="datetime"]:focus,
+.EditPost input[type="email"]:focus,
+.EditPost input[type="number"]:focus,
+.EditPost input[type="search"]:focus,
+.EditPost input[type="time"]:focus,
+.EditPost input[type="url"]:focus,
+.EditPost textarea:focus,
+.EditPost select:focus
+{
+    box-shadow: 0 0 5px #9B97B2;
+    padding: 3%;
+    border: 1px solid #9B97B2;
+}
+
+.EditPost input[type="submit"],
+.EditPost input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #D8D4F2;
+    border-bottom: 2px solid #9B97B2;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+}
+.EditPost input[type="submit"]:hover,
+.EditPost input[type="button"]:hover{
+    background: #9B97B2;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}

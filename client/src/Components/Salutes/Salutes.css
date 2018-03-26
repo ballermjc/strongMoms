@@ -1,4 +1,4 @@
-  .ParentingPosts {
+.SalutesPosts {
     display: flex;
     justify-content: space-around;
     margin: -1em auto 0;
@@ -31,7 +31,7 @@
   }
 
 @media only screen and (max-width: 768px) {      
-      .ParentingPosts {
+      .SalutesPosts {
         flex-direction: column;
         align-content: center;
         align-items: center;
@@ -39,8 +39,8 @@
       }
       
       .CategoryCard {
-        width: 84vw;  
-        margin: 1em auto;       
+        width: 84vw;   
+        margin: 1em auto;      
       }
 
 }
